@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00cc66" />
+  <link rel="icon" href="icon2.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+  <title>CashTrapp</title>
+
+</head>
+<body>
+
+
+    <!-- Top Navigation -->
+<div class="top-nav">
+  <div class="nav-left">
+    <i class="fas fa-user-circle">
+      <a href="/">
+        <img class="nav-img" src="qr.png" alt="">
+      </a>
+    </i>
+  </div>
+  <div class="nav-center">
+    <span style="color: #00b32a;">CashTrApp</span> <!-- You can hide this if needed -->
+  </div>
+  <div class="nav-right">
+    <i class="fas fa-bell">
+      <a href="/">
+        <img class="nav-img" src="justin.png" alt="">
+      </a>
+    </i>
+    <!-- Optional: QR code scanner icon -->
+ <i class="fas fa-qrcode"></i> 
+  <i class="fas fa-qrcode"></i> 
+  </div>
+</div>
+
+
+
+  <div class="cashapp-container">
+    <div class="display" id="display">$0</div>
+    <div class="keypad">
+      <button class="key">1</button>
+      <button class="key">2</button>
+      <button class="key">3</button>
+      <button class="key">4</button>
+      <button class="key">5</button>
+      <button class="key">6</button>
+      <button class="key">7</button>
+      <button class="key">8</button>
+      <button class="key">9</button>
+            <button class="key back"><</button>
+      <button class="key zero">0</button>
+            <button class="key">.</button>
+
+<audio id="click-sound" src="click.mp3" preload="auto"></audio>
+    </div>
+
+
+      <div class="button-container">
+    <button class="cash-btn btn-request">
+      <i class="fas fa-arrow-down">Request</i> 
+    </button>
+    <button class="cash-btn btn-request">
+      <i class="fas fa-arrow-up">Pay</i> 
+    </button>
+  </div>
+  </div>
+
+  
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <div class="nav-item active">
+      <i class="fas fa-home"></i>
+        <a href="/">
+         <img class="nav-img" src="home.png" alt="">
+      </a>
+        </div>
+    <div class="nav-item">
+      <i class="fas fa-dollar-sign"></i>
+        <a href="/">
+         <img class="nav-img" src="card.png" alt="">
+      </a>
+        </div>
+    <div class="nav-item">
+      <i class="fas fa-credit-card"></i>
+      <a href="/">
+        <img class="nav-img" src="icon.png" alt="">
+      </a>
+    </div>
+    <div class="nav-item">
+      <i class="fas fa-chart-line"></i>
+        <a href="/">
+          <img class="nav-img" src="search.png" alt="">
+      </a>
+        </div>
+    <div class="nav-item">
+      <i class="fas fa-receipt"></i>
+       <a href="/">
+        <img class="nav-img" src="history.png" alt="">
+      </a>
+        </div>
+  </div>
+
+<audio id="success-sound" src="sound.mp3" preload="auto"></audio>
+
+
+
+    <div class="success">
+  <div class="content">
+      <img class="success-img" src="success.png" alt="Success Icon" /> 
+    <h1>Success!</h1>
+    <p>Your transaction was completed <span style="font-weight: bolder;">successfully</span>.</p>
+  </div>
+</div>
+
+
+ <script>
+  const display = document.getElementById('display');
+  let currentInput = '';
+
+  function updateDisplay() {
+    display.textContent = '$' + (currentInput || '0');
+  }
+
+  function handleInput(value) {
+    if (value === '.') {
+      if (currentInput.includes('.')) return;
+      if (currentInput === '') currentInput = '0';
+    }
+
+    if (currentInput.includes('.')) {
+      const decimalPart = currentInput.split('.')[1];
+      if (decimalPart.length >= 2) return;
+    }
+
+    const nextInput = currentInput + value;
+    const numericValue = parseFloat(nextInput);
+
+    // Check if the new value is a valid number and <= 9999.99
+    if (!isNaN(numericValue) && numericValue > 9999) {
+      return;
+    }
+
+    currentInput = nextInput;
+    updateDisplay();
+  }
+
+  function handleBackspace() {
+    currentInput = currentInput.slice(0, -1);
+    updateDisplay();
+  }
+
+  document.querySelectorAll('.key').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const val = btn.textContent;
+
+      if (btn.classList.contains('back')) {
+        handleBackspace();
+      } else {
+        handleInput(val);
+      }
+    });
+  });
+
+  updateDisplay();
+</script>
+
+
+
+<script>
+  // Select the audio element
+  const sound = document.getElementById('click-sound');
+
+  // Add click event to anything inside .display
+  document.querySelector('.keypad').addEventListener('click', () => {
+    sound.currentTime = 0; // rewind to start
+    sound.play();
+  });
+</script>
+
+
+<script>
+  const successOverlay = document.querySelector('.success');
+  const successSound = document.getElementById('success-sound');
+  const buttons = document.querySelectorAll('.btn-request');
+
+  function showSuccess() {
+    // Show overlay
+    successOverlay.style.display = 'flex';
+
+    // Play sound
+    successSound.currentTime = 0; // reset in case it's played before
+    successSound.play();
+
+    // Hide after 5 seconds
+    setTimeout(() => {
+      successOverlay.style.display = 'none';
+    }, 2000);
+  }
+
+  // Attach event listeners to both buttons
+  buttons.forEach(button => {
+    button.addEventListener('click', showSuccess);
+  });
+</script>
+
+
+</body>
+</html>

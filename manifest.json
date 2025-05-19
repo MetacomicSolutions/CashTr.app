@@ -1,0 +1,20 @@
+{
+  "name": "Cash Request App",
+  "short_name": "CashTrApp",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#00CF31",
+  "theme_color": "#00CF31",
+  "icons": [
+    {
+      "src": "icon2.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon2.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
