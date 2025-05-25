@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00CF31" />
+  <link rel="icon" href="icon2.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+  <title>CashTrapp</title>
+
+  <style>
+    /* Stack everything vertically by default */
+.main-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Full-width container */
+.secondary-container {
+  background-color: #00df34;
+  border-radius: 12px;
+  width: 85vw;
+  padding: 20px;
+  color: white;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Two horizontal containers */
+.side-by-side-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85vw;
+  gap: 15px;
+}
+
+.side-box {
+  flex: 1;
+  background-color: #00df34;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  text-align: left;
+}
+
+.side-box h4 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.side-box p {
+  font-size: 0.95em;
+  color: #ffffff;
+}
+
+  </style>
+
+</head>
+<body>
+
+
+    <!-- Top Navigation -->
+<div class="top-nav">
+  <div class="nav-left">
+            <h2>Money</h2>
+
+    <i class="fas fa-user-circle">
+     <!-- <a href="/index.html">
+        <img class="nav-img" src="qr.png" alt="">
+      </a> -->
+    </i>
+  </div>
+  <div class="nav-center">
+  </div>
+  <div class="nav-right">
+    <i class="fas fa-bell">
+      <a href="/index.html">
+        <img class="nav-img" src="justin.png" alt="">
+      </a>
+    </i>
+    <!-- Optional: QR code scanner icon -->
+ <i class="fas fa-qrcode"></i> 
+  <i class="fas fa-qrcode"></i> 
+  </div>
+</div>
+
+
+
+<!-- Wrapper for stacking layout -->
+<div class="main-stack">
+
+      <div class="secondary-container">
+    <h4 style="margin: 0; color: white;">Cash Balance</h4>
+    <h1 style="margin: 0; padding: 0;">$23,344.00</h1>
+    <p style="font-weight: bold; margin: 2px;">Account: <span style="font-weight: lighter;">****</span></p>
+    <p style="font-weight: bold; margin: 2px; margin-bottom: 8px;">Rounting: <span style="font-weight: lighter;">***</span></p>
+    <div style="text-align: center;">
+        <button class="balance-button">Add cash</button>
+        <button class="balance-button">Withdraw</button>
+    </div>
+  </div>
+
+
+  <!-- Secondary Container (full width) -->
+  <div style="margin-top: 0;" class="secondary-container">
+    <h4 style="margin: 0;">My Activity</h4>
+    <p style="margin: 0;">Recent payments, deposits, and transfers will appear here.</p>
+  </div>
+
+  <!-- Two Side-by-Side Containers -->
+  <div class="side-by-side-wrapper">
+    <div class="side-box">
+      <h4>Boost</h4>
+      <p>Instant discounts at select stores.</p>
+    </div>
+    <div class="side-box">
+      <h4>Invest</h4>
+      <p>Start buying stocks or bitcoin.</p>
+    </div>
+  </div>
+    <div style="margin-top: 2vh;" class="side-by-side-wrapper">
+    <div class="side-box">
+      <h4>Boost</h4>
+      <p>Instant discounts at select stores.</p>
+    </div>
+    <div class="side-box">
+      <h4>Invest</h4>
+      <p>Start buying stocks or bitcoin.</p>
+    </div>
+    
+  </div>
+  
+  
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+  
+  
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <div class="nav-item active">
+      <i class="fas fa-home"></i>
+        <a href="/index.html">
+         <img class="nav-img" src="home.png" alt="">
+      </a>
+        </div>
+    <div class="nav-item">
+      <i class="fas fa-dollar-sign"></i>
+        <a href="/card.html">
+         <img class="nav-img" src="card.png" alt="">
+      </a>
+        </div>
+    <div class="nav-item">
+      <i class="fas fa-credit-card"></i>
+      <a href="/index.html">
+        <img class="nav-img" src="icon2.png" alt="">
+      </a>
+    </div>
+    <div class="nav-item">
+      <i class="fas fa-chart-line"></i>
+        <a href="/search.html">
+          <img class="nav-img" src="search.png" alt="">
+      </a>
+        </div>
+    <div class="nav-item">
+      <i class="fas fa-receipt"></i>
+       <a href="/transactions.html">
+        <img class="nav-img" src="history.png" alt="">
+      </a>
+        </div>
+  </div>
+
+
+<audio id="success-sound" src="sound.mp3" preload="auto"></audio>
+
+
+
+    <div class="success">
+  <div class="content">
+      <img class="success-img" src="success.png" alt="Success Icon" /> 
+    <h1>Success!</h1>
+    <p>Your transaction was completed <span style="font-weight: bolder;">successfully</span>.</p>
+  </div>
+</div>
+
+
+
+</body>
+</html>

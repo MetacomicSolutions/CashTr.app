@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+
+  <title>Cash App Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #00CF31;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .fixed-header {
+      position: fixed;
+      top: 6vh;
+      left: 0;
+      width: 100%;
+      background-color: #00CF31;
+      padding: 0px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      color: #ffffff;
+      font-size: 1.8em;
+      margin-bottom: 0%;
+      text-align: center;
+    }
+
+    .search-bar {
+      width: 90%;
+      max-width: 700px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .app-container {
+      max-width: 90%;
+      margin: 0 auto;
+      padding: 20px 16px 16px; /* space for fixed header */
+    }
+
+    .results-list {
+      margin-top: 0px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .results-list li {
+      padding: 12px;
+      border-bottom: 1px solid #333;
+      font-size: 1rem;
+    }
+
+    .section-title {
+      color: #ffffff;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    .offers {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .offer-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #00c42e;
+      padding: 10px;
+      border-radius: 8px;
+      width: 80vw;
+    }
+
+    .offer-card img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .offer-details {
+      flex: 1;
+    }
+
+    .offer-details strong {
+      display: block;
+      font-size: 1.1em;
+      color: #ffffff;
+    }
+
+    .offer-details p {
+      margin: 5px 0;
+      font-size: 0.9em;
+      color: #ececec;
+    }
+
+    .offer-details button {
+      background-color: #bebebe;
+      color: #000;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+
+    .offer-details button:hover {
+      background-color: #00c043;
+    }
+
+    @media (max-width: 480px) {
+      .offer-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .offer-card img {
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
+
+      .offer-details button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    
+
+    <!-- Top Navigation -->
+<div class="top-nav">
+  <div class="nav-left">
+            <h2>Discover</h2>
+
+    <i class="fas fa-user-circle">
+     <!-- <a href="/index.html">
+        <img class="nav-img" src="qr.png" alt="">
+      </a> -->
+    </i>
+  </div>
+  <div class="nav-center">
+  </div>
+  <div class="nav-right">
+    <i class="fas fa-bell">
+      <a href="/index.html">
+        <img class="nav-img" src="justin.png" alt="">
+      </a>
+    </i>
+    <!-- Optional: QR code scanner icon -->
+ <i class="fas fa-qrcode"></i> 
+  <i class="fas fa-qrcode"></i> 
+  </div>
+</div>
+
+
+  <!-- Fixed Header with Logo and Search -->
+  <div class="fixed-header">
+    <h1 class="logo"></h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search for $cashtags or users..." aria-label="Search for users or cashtags">
+    </div>
+  </div>
+
+
+
+
+  <!-- Scrollable Content -->
+  <div class="app-container">
+<!--     <ul id="results" class="results-list"></ul>
+ -->
+    <h2 class="section-title">Recommended Offers</h2>
+    <div class="offers">
+      <div class="offer-card">
+        <img src="icon2.png" alt="Uber Icon">
+        <div class="offer-details">
+          <strong>Uber</strong>
+          <p>Get $5 off your first ride.</p>
+          <button>Claim Offer</button>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <img src="icon2.png" alt="DoorDash Icon">
+        <div class="offer-details">
+          <strong>DoorDash</strong>
+          <p>$0 delivery fee for new users.</p>
+          <button>Download</button>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <img src="icon2.png" alt="Spotify Icon">
+        <div class="offer-details">
+          <strong>Spotify</strong>
+          <p>Free Premium for 1 month.</p>
+          <button>Try Free</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  
+  
+  
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <div class="nav-item active">
+      <i class="fas fa-home"></i>
+        <a href="/index.html">
+         <img class="nav-img" src="home.png" alt="">
+      </a>
+        </div>
+    <div class="nav-item">
+      <i class="fas fa-dollar-sign"></i>
+        <a href="/card.html">
+         <img class="nav-img" src="card.png" alt="">
+      </a>
+        </div>
+    <div class="nav-item">
+      <i class="fas fa-credit-card"></i>
+      <a href="/index.html">
+        <img class="nav-img" src="icon2.png" alt="">
+      </a>
+    </div>
+    <div class="nav-item">
+      <i class="fas fa-chart-line"></i>
+        <a href="/search.html">
+          <img class="nav-img" src="search.png" alt="">
+      </a>
+        </div>
+    <div class="nav-item">
+      <i class="fas fa-receipt"></i>
+       <a href="/transactions.html">
+        <img class="nav-img" src="history.png" alt="">
+      </a>
+        </div>
+  </div>
+
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const resultsList = document.getElementById('results');
+
+    const users = [
+      { name: 'John Doe', cashtag: '$johndoe' },
+      { name: 'Jane Smith', cashtag: '$janesmith' },
+      { name: 'Acme Corp', cashtag: '$acmecorp' },
+      { name: 'Bob Marley', cashtag: '$bobm' }
+    ];
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      resultsList.innerHTML = '';
+
+      const filtered = users.filter(user =>
+        user.name.toLowerCase().includes(query) ||
+        user.cashtag.toLowerCase().includes(query)
+      );
+
+      filtered.forEach(user => {
+        const li = document.createElement('li');
+        li.textContent = `${user.name} (${user.cashtag})`;
+        resultsList.appendChild(li);
+      });
+    });
+  </script>
+
+</body>
+</html>

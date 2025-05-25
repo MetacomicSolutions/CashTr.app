@@ -177,6 +177,7 @@ body {
         .button-container {
         margin-top: 10px;
         align-self: center;
+        max-width: 580px;
       display: flex;
       gap: 20px;
     }
@@ -194,6 +195,18 @@ body {
       cursor: pointer;
       border: none;
       transition: all 0.2s ease;
+    }
+
+    .balance-button {
+            padding: 10px 32px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      color: white;
+      margin-bottom: -2vh;
+      background-color: #00bd2c;
     }
 
     .btn-request {
@@ -231,7 +244,7 @@ body {
       left: 0;
       width: 100%;
       margin-top: 0px;
-      background: #00cf3000;
+      background: #00CF31;
       display: flex;
       justify-content: space-around;
       align-items: center;
